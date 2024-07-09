@@ -41,19 +41,30 @@
                 </div>
             </div>
         </div>
-    
+    <!--
         <div id="hero" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden" 
             style="background: linear-gradient(0deg, rgba(207, 102, 60, 0.2), rgba(101, 255, 96, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #EEEFAF 0%, #ffd76a 100%); clip-path: ellipse(150% 87% at 93% 13%);">
             <div class="mx-4 md:mx-8 mt-0 md:mt-4">
                 <h1 class="text-6xl font-bold text-gray-900 line-height-2" style=" font-family: 'Dancing Script', cursive;font-size: 3.5rem;">Welcome To Foody </h1>
                 <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sapiente, doloremque, voluptates vero atque ipsam at odit aliquid iste deleniti doloribus amet cum ab maiores? Natus atque rem reiciendis totam. </p>
-                <!-- <button pButton pRipple type="button" label="Get Started" class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button> -->
+                
+                / <button pButton pRipple type="button" label="Get Started" class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button> 
             </div>
             <div class="flex justify-content-center md:justify-content-end">
                 <img src="assets/demo/images/landing/image1.webp" alt="Image 1" class="w-9 md:w-auto" style="margin-top: 3%; border-radius: 10%;">
             </div>
         </div>
-        
+    -->    
+        <div *ngFor="let section of sections" [ngStyle]="{'background': section.background, 'clip-path': section.clipPath}" id="hero" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+            <div class="mx-4 md:mx-8 mt-0 md:mt-4">
+                <h1 class="text-6xl font-bold text-gray-900 line-height-2" style=" font-family: 'Dancing Script', cursive;font-size: 3.5rem;">{{section.Title}} </h1>
+                <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">{{section.SubTitle}} </p>
+                <!-- <button pButton pRipple type="button" label="Get Started" class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button> -->
+            </div>
+            <div class="flex justify-content-center md:justify-content-end">
+                <img [src]="section.imageSrc" alt="" class="w-9 md:w-auto" style="margin-top: 3%; border-radius: 10%;">
+            </div>
+        </div>
 
         <div id="categories" class="py-4 px-4 lg:px-8 my-2 md:my-4">
             <div class="text-center">
