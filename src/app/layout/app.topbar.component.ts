@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { LayoutService } from "./service/app.layout.service";
 
+
 @Component({
     selector: 'app-topbar',
     templateUrl: './app.topbar.component.html'
@@ -18,9 +19,14 @@ export class AppTopBarComponent {
 
     constructor(public layoutService: LayoutService) { }
 
-    //modified
+    // Modified
     getLogoPath(): string {
         const colorScheme = this.layoutService.config().colorScheme;
         return `assets/layout/images/${colorScheme === 'light' ? 'logo-dark' : 'logo-white'}.svg`;
     }
+
+    /* New method for navigation
+    navigateTo(fragment: string) {
+        this.router.navigate(['/landing'], { fragment: fragment });
+    }*/
 }

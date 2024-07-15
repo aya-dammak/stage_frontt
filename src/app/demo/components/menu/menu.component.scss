@@ -1,0 +1,57 @@
+.footer {
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid #dee2e6;
+  
+    .logo-container {
+      margin-top: -1.5rem;
+    }
+  
+    h4 {
+      font-family: 'Dancing Script', cursive;
+    }
+  
+    a {
+      color: #495057;
+      text-decoration: none;
+      transition: color 0.3s;
+  
+      &:hover {
+        color: #007bff;
+      }
+    }
+  
+    .social-icons {
+      a {
+        font-size: 1.5rem;
+        color: #495057;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: #007bff;
+        }
+      }
+    }
+  
+    .text-900 {
+      color: #212529;
+    }
+  
+    .text-700 {
+      color: #495057;
+    }
+  
+    .line-height-3 {
+      line-height: 1.75;
+    }
+  
+    .font-medium {
+      font-weight: 500;
+    }
+  
+    .font-bold {
+      font-weight: 700;
+    }
+  }
+  

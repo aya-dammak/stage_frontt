@@ -1,5 +1,58 @@
+<!-- app.topbar.component.html -->
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" [routerLink]="'/'">
+        <img src="assets/layout/images/logoo.png"alt="logo">
+        <span style="font-family: 'Dancing Script', cursive;">FOODY</span>
+    </a>
+
+    <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
+        <i class="pi pi-bars"></i>
+    </button>
+
+    <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="layoutService.showProfileSidebar()">
+        <i class="pi pi-ellipsis-v"></i>
+    </button>
+
+    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+        <button class="p-link layout-topbar-button">
+            <i class="pi pi-calendar"></i>
+            <span>Calendar</span>
+        </button>
+        <button class="p-link layout-topbar-button">
+            <i class="pi pi-user"></i>
+            <span>Profile</span>
+        </button>
+        <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
+            <i class="pi pi-cog"></i>
+            <span>Settings</span>
+        </button>
+    </div>
+</div>
 
 
+
+
+
+
+
+
+
+
+
+<!--
+        <div id="hero" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden" 
+            style="background: linear-gradient(0deg, rgba(207, 102, 60, 0.2), rgba(101, 255, 96, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #EEEFAF 0%, #ffd76a 100%); clip-path: ellipse(150% 87% at 93% 13%);">
+            <div class="mx-4 md:mx-8 mt-0 md:mt-4">
+                <h1 class="text-6xl font-bold text-gray-900 line-height-2" style=" font-family: 'Dancing Script', cursive;font-size: 3.5rem;">Welcome To Foody </h1>
+                <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sapiente, doloremque, voluptates vero atque ipsam at odit aliquid iste deleniti doloribus amet cum ab maiores? Natus atque rem reiciendis totam. </p>
+                
+                / <button pButton pRipple type="button" label="Get Started" class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button> 
+            </div>
+            <div class="flex justify-content-center md:justify-content-end">
+                <img src="assets/demo/images/landing/image1.webp" alt="Image 1" class="w-9 md:w-auto" style="margin-top: 3%; border-radius: 10%;">
+            </div>
+        </div>
+     -->  
 
 
 <!-- nos categories -->
@@ -502,3 +555,43 @@
         </div>
     </div>
 </div>
+
+<!-- footer -->
+<div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
+    <div class="grid justify-content-between">
+        <div class="align-items-center surface-0 flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:120px">
+            <div class="col-12 md:col-2" style="margin-top:-1.5rem;">
+                <a (click)="router.navigate(['/pages/landing'], {fragment: 'home'})" class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer">
+                    <img src="assets/layout/images/logoo.png" alt="footer sections" width="50" height="50" class="mr-2">
+                    <h4 class="font-bold text-3xl text-900" style="font-family: 'Dancing Script', cursive;">FOODY</h4>
+                </a>
+            </div>
+            <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
+                <li>
+                    <a (click)="router.navigate(['/landing'], {fragment: 'home'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                       <span>Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="router.navigate(['/landing'], {fragment: 'categories'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="router.navigate(['/landing'], {fragment: 'menu'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                        <span>Menu</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="router.navigate(['/landing'], {fragment: 'article'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                        <span>Article</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="router.navigate(['/landing'], {fragment: 'commande'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                        <span>Commande</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+<!--

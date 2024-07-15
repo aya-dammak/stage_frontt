@@ -6,15 +6,24 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
     selector: 'app-landing',
-    templateUrl: './landing.component.html'
+    templateUrl: './landing.component.html',
+    styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent {
+    headerItems = [
+        { name: 'Accueil', route: '/landing' },
+        { name: 'Categories', route: '/landing', fragment: 'categories' },
+        { name: 'Menu', route: '/landing', fragment: 'menu' },
+        { name: 'Article', route: '/landing', fragment: 'article' },
+        { name: 'Commande', route: '/landing', fragment: 'commande' }
+      ];
 
     sections = [
         {
+            
             type: 'intro',
-            Title: 'Welcome To Foody',
-            SubTitle:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sapiente, doloremque, voluptates vero atque ipsam at odit aliquid iste deleniti doloribus amet cum ab maiores? Natus atque rem reiciendis totam.',
+            Title: 'Bienvenue à Foody,',
+            SubTitle:' où la gastronomie rencontre la convivialité. Notre équipe passionnée vous invite à savourer une expérience culinaire exceptionnelle, inspirée par les saveurs authentiques et les ingrédients frais. Que vous soyez en quête d\'un déjeuner rapide, d\'un dîner entre amis ou d\'une soirée spéciale à deux, notre menu varié saura combler toutes vos envies. Plongez dans une atmosphère accueillante où chaque plat est préparé avec soin pour vous offrir une symphonie de goûts et de textures. Découvrez notre histoire à travers chaque assiette et laissez-vous séduire par notre passion pour la cuisine. Bienvenue chez nous !',
             imageSrc: 'assets/demo/images/landing/image1.webp',
             background: 'linear-gradient(0deg, rgba(207, 102, 60, 0.2), rgba(101, 255, 96, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #EEEFAF 0%, #ffd76a 100%)',
             clipPath: 'ellipse(150% 87% at 93% 13%)'
@@ -58,7 +67,7 @@ export class LandingComponent {
     
     aboutUs = {
         title: 'A propos',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
+        description: 'Chez Foody, nous célébrons la passion pour la cuisine authentique. Chaque plat est une histoire racontée à travers des ingrédients locaux et des saveurs inspirées. Bienvenue dans notre univers gastronomique, où chaque repas est une expérience à savourer.',
         backgroundStyle: 'linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #EFE1AF 0%, #C3DCFA 100%)',
         textStyle: 'font-family: \'Dancing Script\', cursive;'
     };
@@ -66,57 +75,70 @@ export class LandingComponent {
         {
           image: 'f3.png',
           alt: 'pizza',
-          title: 'Delicious Pizza',
-          backgroundColor: 'rgba(255, 207, 161, 0.2)'
+          title: 'Pizza',
+          backgroundColor: 'rgba(255, 207, 161, 0.2)',
+          price: '12dt',
         },
         {
-          image: 'baguette farcie.jpeg',
-          alt: 'baguetteFarcie',
-          title: 'Delicious Baguette Farcie',
-          backgroundColor: 'rgba(160, 237, 145, 0.2)'
+            image: 'Cordon_Bleu.jpg',
+            alt: 'Cordon Bleu',
+            title: 'Cordon Bleu',
+            backgroundColor: 'rgba(160, 237, 145, 0.2)',
+            price: '15dt',
         },
         {
-          image: 'f2.png',
-          alt: 'Burger',
-          title: 'Delicious Burger',
-          backgroundColor: 'rgba(255, 207, 161, 0.2)'
-        },
+            image: 'Salade_Riz.jpg',
+            alt: 'Salade de Riz',
+            title: 'Salade de Riz',
+            backgroundColor: 'rgba(160, 237, 145, 0.2)',
+            price: '15dt',
+            category: 'Salades'
+          },
         {
-          image: 'escalope_pané.png',
-          alt: 'escalope_pané',
-          title: 'Delicious Plat Escalope Pané',
-          backgroundColor: 'rgba(160, 237, 145, 0.2)'
-        },
+            image: 'Escaope_Pané.jpg',
+            alt: 'Escaope Pané',
+            title: 'Escaope Pané',
+            backgroundColor: 'rgba(255, 207, 161, 0.2)',
+            price: '14dt',
+            category: 'Plat'
+          },
         {
           image: 'salade cesar.jpg',
           alt: 'salade_cesar',
-          title: 'Delicious Salade Cesar',
-          backgroundColor: 'rgba(255, 207, 161, 0.2)'
+          title: 'Salade Cesar',
+          backgroundColor: 'rgba(255, 207, 161, 0.2)',
+          price: '15dt',
         },
         {
           image: 'salade mechouia.jpg',
           alt: 'salade_mechouia',
-          title: 'Delicious Salade Mechouia',
-          backgroundColor: 'rgba(160, 237, 145, 0.2)'
+          title: 'Salade Mechouia',
+          backgroundColor: 'rgba(160, 237, 145, 0.2)',
+          price: '15dt',
         },
         {
-          image: 'pasta.webp',
-          alt: 'Pasta',
-          title: 'Delicious Pasta',
-          backgroundColor: 'rgba(255, 207, 161, 0.2)'
-        },
+            image: 'Pasta_Puttanesca.jpg',
+            alt: 'Pasta Puttanesca',
+            title: 'Pasta Puttanesca',
+            backgroundColor: 'rgba(160, 237, 145, 0.2)',
+            price: '16dt',
+            category: 'Pasta'
+          },
         {
           image: 'poisson.jpg',
           alt: 'Poisson',
-          title: 'Delicious Poisson Grillé',
-          backgroundColor: 'rgba(160, 237, 145, 0.2)'
+          title: 'Poisson Grillé',
+          backgroundColor: 'rgba(160, 237, 145, 0.2)',
+          price: '15dt',
         },
         {
-          image: 'f6.png',
-          alt: 'pizza',
-          title: 'Delicious Pizza',
-          backgroundColor: 'rgba(255, 207, 161, 0.2)'
-        }
+            image: 'Salade_Végéterienne.jpg',
+            alt: 'Salade Végéterienner',
+            title: 'Salade Végéterienne',
+            backgroundColor: 'rgba(255, 207, 161, 0.2)',
+            price: '8dt',
+            category: 'Salades'
+          },
       ];
 
       article = {
@@ -151,23 +173,60 @@ export class LandingComponent {
         imgSrc: 'mockup-desktop.svg',
         imgAlt: 'mockup'
       };
+      footerItems = [
+        {
+          title: 'Company',
+          links: [
+            { name: 'Accueil', route: '/landing' },
+            { name: 'Categories', route: '/landing', fragment: 'categories' },
+            { name: 'Menu', route: '/landing', fragment: 'menu' },
+            { name: 'Article', route: '/landing', fragment: 'article' },
+            { name: 'Commande', route: '/landing', fragment: 'commande' }
+          ]
+        },
+        {
+          title: 'Contact',
+          contacts: [
+            { icon: 'fa-location-dot', text: 'Sfax' },
+            { icon: 'fa-phone', text: '+216 44 000 000' }
+          ],
+          socials: [
+            { icon: 'fa-facebook', link: '#' },
+            { icon: 'fa-instagram', link: '#' },
+            { icon: 'fa-linkedin', link: '#' }
+          ]
+        },
+        {
+          title: 'Opening',
+          timings: [
+            'Lundi - Samedi 09AM - 09PM',
+            'Dimanche 10AM - 08PM'
+          ]
+        }
+      ];
+      
+    
     
 
     constructor(public layoutService: LayoutService, public router: Router) { }
-    //modified
     getLogoPath(): string {
         const colorScheme = this.layoutService.config().colorScheme;
         return `assets/layout/images/${colorScheme === 'light' ? 'logo-dark' : 'logo-white'}.svg`;
     }
-    /*getImagePath(image: string): string {
-        return `assets/demo/images/landing/${image}`;
+    getRouterLink(item: any) {
+        if (item.fragment) {
+          return [item.route, { fragment: item.fragment }];
+        }
+        return [item.route];
     }
-
-    getCarouselId(category: string): string {
-        return `carousel${category.replace(/\s+/g, '')}`;
-    }*/
 
     getImagePath(image: string): string {
         return `assets/demo/images/landing/${image}`;
+    }
+    navigateTo(fragment: string) {
+        this.router.navigate(['/landing'], { fragment: fragment });
+    }
+    navigateToMenu() {
+        this.router.navigate(['/menu']);
     }
 }
