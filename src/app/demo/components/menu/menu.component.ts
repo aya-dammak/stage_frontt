@@ -230,10 +230,7 @@ export class MenuComponent {
     return `assets/demo/images/landing/${image}`;
   }
   getRouterLink(item: any) {
-    if (item.fragment) {
-      return [item.route, { fragment: item.fragment }];
-    }
-    return [item.route];
+    return item.fragment ? [item.route, { fragment: item.fragment }] : [item.route];
   }
 
   selectCategory(category: string): void {

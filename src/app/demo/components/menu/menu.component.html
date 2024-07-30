@@ -11,15 +11,17 @@
       <div class="align-items-center surface-0 flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:120px">
         <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
           <li *ngFor="let item of headerItems">
-            <a (click)="router.navigate(getRouterLink(item))" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+            <a [routerLink]="item.route" [fragment]="item.fragment" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
               <span>{{ item.name }}</span>
             </a>
           </li>
         </ul>
+      <!--
         <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
           <button pButton pRipple label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-orange-500" style="border-radius: 10%;"></button>
           <button pButton pRipple label="Register" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-orange-500 text-white" style="border-radius: 10%;"></button>
         </div>
+      -->
       </div>
     </div>
     

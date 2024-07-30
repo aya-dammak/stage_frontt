@@ -11,7 +11,7 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
-import { MenuModule } from './demo/components/menu/menu.module'; 
+import { MenuModule } from './demo/components/menu/menu.module';
 
 @NgModule({
     declarations: [AppComponent, NotfoundComponent],

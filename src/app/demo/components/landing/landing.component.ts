@@ -214,11 +214,8 @@ export class LandingComponent {
         return `assets/layout/images/${colorScheme === 'light' ? 'logo-dark' : 'logo-white'}.svg`;
     }
     getRouterLink(item: any) {
-        if (item.fragment) {
-          return [item.route, { fragment: item.fragment }];
-        }
-        return [item.route];
-    }
+        return item.fragment ? [item.route, { fragment: item.fragment }] : [item.route];
+      }
 
     getImagePath(image: string): string {
         return `assets/demo/images/landing/${image}`;
