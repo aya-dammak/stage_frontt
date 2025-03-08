@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
+import { CartService } from 'src/app/demo/components/cart.service';
 
 @Component({
   selector: 'app-menu',
@@ -66,7 +67,7 @@ export class MenuComponent {
       price: '19dt',
       category: 'Pizza'
     },
-
+    /*
     {
       image: 'panozzo.webp',
       alt: 'Panozzo Mexican',
@@ -98,7 +99,7 @@ export class MenuComponent {
       backgroundColor: 'rgba(160, 237, 145, 0.2)',
       price: '14dt',
       category: 'Panozzo'
-    },
+    },*/
     {
       image: 'Salade_Végéterienne.jpg',
       alt: 'Salade Végéterienner',
@@ -189,7 +190,7 @@ export class MenuComponent {
     }
   ];
 
-  menuCategories = ['All', 'Pizza', 'Salades', 'Panozzo', 'Pasta', 'Plat'];
+  menuCategories = ['All', 'Pizza', 'Salades'/*, /*'Panozzo'*/, 'Pasta', 'Plat'];
   selectedCategory: string = 'All';
 
   footerItems = [
@@ -224,7 +225,7 @@ export class MenuComponent {
     }
   ];
 
-  constructor(public layoutService: LayoutService, public router: Router) { }
+  constructor(public layoutService: LayoutService, public router: Router,private cartService: CartService) { }
 
   getImagePath(image: string): string {
     return `assets/demo/images/landing/${image}`;
@@ -243,5 +244,14 @@ export class MenuComponent {
     } else {
       return this.menuItems.filter(item => item.category === this.selectedCategory);
     }
+  }
+   //modifier
+  addToCart(item: any) {
+    this.cartService.addToCart(item);
+  }
+
+  // Add the function
+  navigateToCart() {
+    this.router.navigate(['/cart']);
   }
 }

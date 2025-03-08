@@ -1,0 +1,105 @@
+.container {
+  background-color: #fff8e1; /* Blanc cassé pour adoucir l'arrière-plan */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #ff6f00; /* Orange vif pour le titre */
+}
+
+.table {
+  border: 1px solid #ff6f00; /* Bordure orange pour la table */
+}
+
+.table-hover tbody tr:hover {
+  background-color: #c8e6c9; /* Vert pâle pour l'effet hover */
+}
+
+.table thead {
+  background-color: #4caf50; /* Vert foncé pour l'en-tête */
+  color: #ffffff;
+}
+
+.table td, .table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btn-danger {
+  background-color: #ff6f00; /* Orange pour le bouton de suppression */
+  border-color: #ff6f00;
+}
+
+.btn-danger:hover {
+  background-color: #e65100; /* Orange plus foncé au survol */
+  border-color: #e65100;
+}
+
+.btn-success {
+  background-color: #4caf50; /* Vert pour le bouton de validation */
+  border-color: #4caf50;
+  color: #ffffff;
+}
+
+.btn-success:hover {
+  background-color: #388e3c; /* Vert plus foncé au survol */
+  border-color: #388e3c;
+}
+.footer {
+  background-color: #f8f9fa;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid #dee2e6;
+
+  .logo-container {
+    margin-top: -1.5rem;
+  }
+
+  h4 {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  a {
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #007bff;
+    }
+  }
+
+  .social-icons {
+    a {
+      font-size: 1.5rem;
+      color: #495057;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+
+  .text-900 {
+    color: #212529;
+  }
+
+  .text-700 {
+    color: #495057;
+  }
+
+  .line-height-3 {
+    line-height: 1.75;
+  }
+
+  .font-medium {
+    font-weight: 500;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+}

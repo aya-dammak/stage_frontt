@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SubTitle } from 'chart.js';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
-
+import { CartService } from 'src/app/demo/components/cart.service';
 
 @Component({
     selector: 'app-landing',
@@ -170,8 +170,7 @@ export class LandingComponent {
           ],
           buttonText: 'Envoyer'
         },
-        imgSrc: 'mockup-desktop.svg',
-        imgAlt: 'mockup'
+        imgSrc: 'bg.png'
       };
       footerItems = [
         {
@@ -208,7 +207,7 @@ export class LandingComponent {
     
     
 
-    constructor(public layoutService: LayoutService, public router: Router) { }
+    constructor(public layoutService: LayoutService, public router: Router,private cartService: CartService) { }
     getLogoPath(): string {
         const colorScheme = this.layoutService.config().colorScheme;
         return `assets/layout/images/${colorScheme === 'light' ? 'logo-dark' : 'logo-white'}.svg`;
@@ -225,5 +224,13 @@ export class LandingComponent {
     }
     navigateToMenu() {
         this.router.navigate(['/menu']);
+    }
+    addToCart(item) {
+      this.cartService.addToCart(item);
+      alert(`${item.title} has been added to the cart!`);
+    }
+    submitOrder() {
+      alert('Votre commande a été envoyée avec succès !');
+      this.cartService.clearCart();
     }
 }

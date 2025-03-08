@@ -102,7 +102,7 @@
                     <h5 class="mb-2 text-900 text-center">{{ item.title }}</h5>
                     <div class="d-flex justify-content-between align-items-center" style="padding: 0 15px;">
                         <span class="text-600">{{ item.price }}</span>
-                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i class="fa-solid fa-cart-shopping" (click)="addToCart(item)"></i>
                     </div>
                   </div>
                 </div>
@@ -144,7 +144,7 @@
                 <h2 class="line-height-1 text-900 text-4xl font-normal" [style.font-family]="orderSection.titleStyle">{{ orderSection.title }}</h2>
                 <span class="text-700 text-2xl line-height-3 mr-0 md:mr-2" style="max-width:650px;">
                   
-                    <form action="" method="">
+                    <form (ngSubmit)="submitOrder()">
                         <div class="wrapper">
                             <div class="input-box" *ngFor="let input of orderSection.form.inputs">
                                 <i [class]="input.icon"></i>
@@ -156,7 +156,7 @@
                 </span>
               </div>
               <div class="flex justify-content-end flex-order-1 sm:flex-order-2 col-12 lg:col-6 bg-yellow-100 p-0" style="border-radius:8px;">
-                <img [src]="getImagePath(orderSection.imgSrc)" class="w-11" [alt]="orderSection.imgAlt">
+                <img [src]="getImagePath(orderSection.imgSrc)" class="w-11" >
               </div>
             </div>
         </div>

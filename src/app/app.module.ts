@@ -12,10 +12,12 @@ import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { MenuModule } from './demo/components/menu/menu.module';
+import { CartModule } from './demo/components/cart/cart.module';
+
 
 @NgModule({
     declarations: [AppComponent, NotfoundComponent],
-    imports: [AppRoutingModule, AppLayoutModule, MenuModule],
+    imports: [AppRoutingModule, AppLayoutModule, MenuModule,CartModule],
     providers: [
         { provide: LocationStrategy, useClass: PathLocationStrategy },
         CountryService, CustomerService, EventService, IconService, NodeService,

@@ -54,4 +54,14 @@
       font-weight: 700;
     }
   }
+  .btn-success {
+    background-color: #4caf50; /* Vert pour le bouton de validation */
+    border-color: #4caf50;
+    color: #ffffff;
+  }
+  
+  .btn-success:hover {
+    background-color: #388e3c; /* Vert plus foncé au survol */
+    border-color: #388e3c;
+  }
   
